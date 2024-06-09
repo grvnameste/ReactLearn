@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './LoginForm.scss';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Authentication/AuthContext';
 
 const LoginForm = () => {
     const [credentials, setCredentials] = useState({ username: '', password: '' });
+    const { login } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const handleChange = (e) => {
@@ -13,8 +15,8 @@ const LoginForm = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        login(JSON.stringify(credentials));
         navigate("/dashboard");
-        console.log('Login credentials:', credentials);
     };
 
     return (
