@@ -1,0 +1,35 @@
+// NavBar.scss
+.navbar {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+        font-size: 1.5rem;
+        color: #5f6368;
+        font-weight: bold;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+
+        li {
+            margin: 0 1rem;
+
+            a {
+                text-decoration: none;
+                color: #5f6368;
+                font-size: 1rem;
+                transition: color 0.3s ease-in-out;
+
+                &:hover {
+                    color: #1a73e8;
+                }
+            }
+        }
+    }
+}
